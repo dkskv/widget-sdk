@@ -97,7 +97,8 @@ export interface IWidgetColumnIndicator extends TSchemaType<typeof WidgetColumnI
 
 export interface IWidgetDimensionHierarchy<
   D extends IWidgetDimensionInHierarchy = IWidgetDimensionInHierarchy,
-> extends TSchemaType<typeof WidgetDimensionHierarchySchema<D>> {}
+  // TODO: подумать как прокидывать дженерик в функцию истории
+> extends TSchemaType<ReturnType<typeof WidgetDimensionHierarchySchema<D>>> {}
 
 export type TConditionalDimensionInHierarchy<
   T extends IWidgetDimensionInHierarchy = IWidgetDimensionInHierarchy,
